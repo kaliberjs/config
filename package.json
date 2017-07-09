@@ -1,0 +1,20 @@
+{
+  "version": "0.0.1",
+  "name": "@kaliber/config",
+  "main": "index.js",
+  "description": "Zero dependency, minimal configuration library operating on CONFIG_ENV",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "keywords": [
+    "configuration"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaliberjs/config.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaliberjs/config/issues"
+  }
+}
