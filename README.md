@@ -1,6 +1,6 @@
 A small, simple and dependency-free library for configuration
 
-# Recommentations
+# Recommendations
 
 Do not use `default.js` for development values that are different in other environments. In other words: only use `default.js` for values that are the same for all environments.
 
