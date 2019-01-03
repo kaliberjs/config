@@ -29,6 +29,25 @@ Run the command with the correct environment
 CONFIG_ENV=test node index.js
 ```
 
+# Usage from node
+
+Define a configuration file
+```
+// config/test.js
+module.exports = {
+  my_config_value: 'test'
+}
+
+```
+
+Load the configuration
+```
+// index.js
+const load = require('@kaliber/config/load')
+const { my_config_value } = load('test')
+console.log(my_config_value)
+```
+
 # Features
 
 ### `default.js` and `local.js`

@@ -18,6 +18,7 @@ Promise.all(
     return new Promise(resolve => {
 
       exec('node index.js', options, (err, stdout, stderr) => {
+        if (stdout) console.log(stdout)
         const [firstLine] = stderr && stderr.split('\n') || []
         resolve(
           err
