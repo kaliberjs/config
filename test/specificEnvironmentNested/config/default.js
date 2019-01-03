@@ -1,1 +1,1 @@
-module.exports = { nested: { fromDefault: true } }
+module.exports = { nested: {  nested: { fromDefault: true } } }

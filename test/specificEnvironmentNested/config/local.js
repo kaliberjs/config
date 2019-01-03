@@ -1,1 +1,1 @@
-module.exports = { nested: { fromLocal: true } }
+module.exports = { nested: {  nested: { fromLocal: true } } }

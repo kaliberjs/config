@@ -35,10 +35,8 @@ function mergeDeep(target, source) {
     const sourceValue = source[key]
     const targetIsObject = typeof targetValue === 'object' && targetValue !== null
     const sourceIsObject = typeof sourceValue === 'object' && sourceValue !== null
-    if (targetIsObject && sourceIsObject) {
-      result[key] = mergeDeep(targetValue, sourceValue)
-    } else if (sourceIsObject) {
-      result[key] = Object.assign({}, sourceValue)
+    if (sourceIsObject) {
+      result[key] = mergeDeep(targetIsObject ? targetValue : {}, sourceValue)
     } else {
       result[key] = sourceValue
     }
