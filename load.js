@@ -36,7 +36,8 @@ function mergeDeep(target, source) {
     const targetIsObject = typeof targetValue === 'object' && targetValue !== null
     const sourceIsObject = typeof sourceValue === 'object' && sourceValue !== null
     if (sourceIsObject) {
-      result[key] = mergeDeep(targetIsObject ? targetValue : {}, sourceValue)
+      const emptyValue = Array.isArray(sourceValue) ? [] : {}
+      result[key] = mergeDeep(targetIsObject ? targetValue : emptyValue, sourceValue)
     } else {
       result[key] = sourceValue
     }
