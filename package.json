@@ -1,5 +1,5 @@
 {
-  "version": "0.0.6",
+  "version": "0.0.7",
   "name": "@kaliber/config",
   "main": "index.js",
   "description": "Zero dependency, minimal configuration library operating on CONFIG_ENV",
