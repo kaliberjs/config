@@ -33,11 +33,12 @@ function mergeDeep(target, source) {
   return Object.keys(source).reduce((result, key) => {
     const targetValue = result[key]
     const sourceValue = source[key]
-    const targetIsObject = typeof targetValue === 'object' && targetValue !== null
-    const sourceIsObject = typeof sourceValue === 'object' && sourceValue !== null
-    if (sourceIsObject) {
-      const emptyValue = Array.isArray(sourceValue) ? [] : {}
-      result[key] = mergeDeep(targetIsObject ? targetValue : emptyValue, sourceValue)
+
+    if (canMerge(targetValue, sourceValue)) {
+      result[key] = mergeDeep(targetValue, sourceValue)
+    } else if (shouldClone(sourceValue)) {
+      const emptyValue = isObject(sourceValue) ? {} : []
+      result[key] = mergeDeep(emptyValue, sourceValue)
     } else {
       result[key] = sourceValue
     }
@@ -49,3 +50,13 @@ function exit(error) {
   console.error(error)
   process.exit(1)
 }
+
+function canMerge(x, y) { return (isObject(x) && isObject(y)) || (isArray(x) && isArray(y)) }
+function shouldClone(x) { return isObject(x) || isArray(x) }
+function isObject(x) {
+  const constructor = getConstructor(x)
+  return constructor && constructor instanceof constructor
+}
+function isArray(x) { return Array.isArray(x) }
+function getConstructor(x) { return isObjectLike(x) && Object.getPrototypeOf(x).constructor }
+function isObjectLike(x) { return typeof x === 'object' && x !== null }
