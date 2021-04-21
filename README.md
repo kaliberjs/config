@@ -48,6 +48,27 @@ const { my_config_value } = load('test')
 console.log(my_config_value)
 ```
 
+# Usage from the command line
+
+Define a configuration file
+```
+// config/test.js
+module.exports = {
+  my_config_value: 'test'
+}
+
+```
+
+Run the command with the correct environment
+```
+./node_modules/.bin/kaliber-config test my_config_value
+```
+
+When running in an NPM environment (`scripts` in `package.json`):
+```
+kaliber-config test my_config_value
+```
+
 # Features
 
 ### `default.js` and `local.js`
