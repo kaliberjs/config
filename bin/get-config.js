@@ -3,8 +3,8 @@
 try {
   const [configEnv, path] = process.argv.slice(2)
 
-  if (!configEnv) exit('No configuration environment was passed in, make sure you supply it. Example `kaliber-config ...`')
-  if (!path) exit('No path was passed in, make sure you supply it. Example `kaliber-config ... ...`')
+  if (!configEnv) exit('No configuration environment was passed in, make sure you supply it. Example `kaliber-config ... my_config_value`')
+  if (!path) exit(`No path was passed in, make sure you supply it. Example \`kaliber-config ${configEnv} ...\``)
 
   const load = require('../load')
   const config = load(configEnv)
