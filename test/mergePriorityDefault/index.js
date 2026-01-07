@@ -1,3 +1,3 @@
-const c = require('../../index')
+const c = /** @type {any} */ (require('../../index'))
 
-if (!c.key === 2) throw new Error('failure')
+if (c.key !== 2) throw new Error('failure')

@@ -11,7 +11,7 @@ Promise.all(
 
     const options = {
       cwd: testDir,
-      env: { PATH: process.env.PATH }
+      env: /** @type {Record<string, string>} */ ({ PATH: process.env.PATH })
     }
     if ((expect.config || {}).passConfigEnv !== false) options.env.CONFIG_ENV = test
 
@@ -19,7 +19,7 @@ Promise.all(
 
       exec('node index.js', options, (err, stdout, stderr) => {
         if (stdout) console.log(stdout)
-        const [firstLine] = stderr && stderr.split('\n') || []
+        const [firstLine] = (stderr && stderr.split('\n')) || []
         resolve(
           err
             ? ( expect.error
@@ -27,7 +27,7 @@ Promise.all(
                 ? { test }
                 : { test, failure: `Expected: "${expect.output}"\nOutput: "${firstLine}"` }
               )
-              : { test, failure: `Unexpected ${err}`}
+              : { test, failure: `Unexpected ${err}` }
             )
             : ( expect.error
               ? { test, failure: `Expected error with output ${expect.output}` }

@@ -1,5 +1,5 @@
 {
-  "version": "0.0.8",
+  "version": "1.0.0",
   "name": "@kaliber/config",
   "main": "index.js",
   "description": "Zero dependency, minimal configuration library operating on CONFIG_ENV",
@@ -19,5 +19,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kaliberjs/config/issues"
+  },
+  "devDependencies": {
+    "@kaliber/eslint-plugin": "^1.0.0",
+    "@types/node": "^22.0.0"
   }
 }

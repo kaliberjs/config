@@ -1,0 +1,16 @@
+{
+  "include": [
+    "./*.js",
+    "./bin/*.js",
+    "./test/**/*.js",
+  ],
+  "compilerOptions": {
+    "noEmit": true,
+    "checkJs": true,
+    "allowJs": true,
+    "strict": true,
+    "module": "node16",
+    "moduleResolution": "node16",
+    "lib": ["ES2023"]
+  }
+}
