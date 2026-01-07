@@ -3,6 +3,7 @@
   "name": "@kaliber/config",
   "main": "index.js",
   "description": "Zero dependency, minimal configuration library operating on CONFIG_ENV",
+  "type": "commonjs",
   "scripts": {
     "test": "node test/index.js"
   },
