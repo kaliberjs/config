@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "0.9.9",
   "name": "@kaliber/config",
   "main": "index.js",
   "description": "Zero dependency, minimal configuration library operating on CONFIG_ENV",
@@ -7,6 +7,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "index.js",
+    "load.js",
+    "README.md",
+    "bin/get-config.js"
+  ],
   "scripts": {
     "test": "node test/index.js"
   },
