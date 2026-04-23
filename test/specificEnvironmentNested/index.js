@@ -1,5 +1,5 @@
-const config = require('../../index')
-const other = require('../../load')('otherEnvironment')
+const config = /** @type {any} */ (require('../../index'))
+const other = /** @type {any} */ (require('../../load')('otherEnvironment'))
 
 if (!config.nested.nested.fromDefault || !config.nested.nested.fromLocal || !config.nested.nested.fromSpecific || config.nested.nested.fromOther) throw new Error('invalid')
 

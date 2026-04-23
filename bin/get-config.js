@@ -8,13 +8,14 @@ try {
 
   const load = require('../load')
   const config = load(configEnv)
-  const result = path.split('.').reduce((result, part) => result[part], config)
+  const result = path.split('.').reduce((result, part) => result[part], /** @type {any} */ (config))
   process.stdout.write(result)
   process.exit(0)
 } catch (e) {
   exit(e)
 }
 
+/** @arg {any} e */
 function exit(e) {
   console.error(e)
   process.exit(1)

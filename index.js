@@ -6,6 +6,10 @@ const load = require('./load')
 
 module.exports = load(configEnv)
 
+/**
+ * @arg {string} error
+ * @returns {never}
+ */
 function exit(error) {
   console.error(error)
   process.exit(1)

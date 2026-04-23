@@ -1,8 +1,18 @@
 {
-  "version": "0.0.8",
+  "version": "0.9.9",
   "name": "@kaliber/config",
   "main": "index.js",
   "description": "Zero dependency, minimal configuration library operating on CONFIG_ENV",
+  "type": "commonjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js",
+    "load.js",
+    "README.md",
+    "bin/get-config.js"
+  ],
   "scripts": {
     "test": "node test/index.js"
   },
@@ -19,5 +29,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kaliberjs/config/issues"
+  },
+  "devDependencies": {
+    "@kaliber/eslint-plugin": "^1.0.0",
+    "@types/node": "^22.0.0"
   }
 }

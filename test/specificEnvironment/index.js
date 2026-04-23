@@ -1,5 +1,5 @@
-const config = require('../../index')
-const other = require('../../load')('otherEnvironment')
+const config = /** @type {any} */ (require('../../index'))
+const other = /** @type {any} */ (require('../../load')('otherEnvironment'))
 
 if (!config.fromDefault || !config.fromLocal || !config.fromSpecific || config.fromOther) throw new Error('invalid')
 
